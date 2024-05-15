@@ -53,11 +53,17 @@ function calculateGradientAngle(from, to) {
 }
 
 // Dimension tokens
-export function dimensionTokentoSCSS(token: DimensionToken, mappedTokens: Map<string, Token>, tokenGroups: Array<TokenGroup>): string {
+export function dimensionTokentoSCSS(token, mappedTokens: Map<string, Token>, tokenGroups: Array<TokenGroup>): string {
   const name = tokenVariableName(token, tokenGroups)
   const value = token.value.measure;
-  const unit = convertDimensionUnit(token.propertyValues['tokenUnit']);
-  return `$${name}: ${value}${unit};`
+  const unit = token.properties[0].options.filter((o) => o.id === token.propertyValues.tokenUnit).map((o) => `${o.name}`)
+  if (unit == "none") {
+    return `$${name}: ${value};`
+  } if (unit == "percent") {
+    return `$${name}: ${value}%;`
+  } else {
+    return `$${name}: ${value}${unit};`
+  }
 }
 
 //Shadow tokens

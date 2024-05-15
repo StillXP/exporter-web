@@ -1,7 +1,7 @@
 import { FileHelper } from "@supernovaio/export-helpers"
 import { Supernova, PulsarContext, RemoteVersionIdentifier, AnyOutputFile, TokenType, ColorToken, DimensionToken, ShadowToken, GradientToken, StringToken, ProductCopyToken, AnyStringToken } from "@supernovaio/sdk-exporters"
 import { ExporterConfiguration } from "../config"
-import { colorTokenToCSS, copyTokenToSCSS, dimensionTokentoSCSS, gradientTokensToSCSS, shadowToken, shadowTokenToSCSS } from "./content/token"
+import { colorTokenToCSS, copyTokenToSCSS, dimensionTokentoSCSS, gradientTokensToSCSS, shadowTokenToSCSS } from "./content/token"
 
 /**
  * Export entrypoint.
