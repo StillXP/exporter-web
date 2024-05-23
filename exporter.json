@@ -7,7 +7,7 @@
     "homepage": "[COMPANY_WEBSITE or delete]",
     "version": "1.0.0",
     "usesBrands": false,
-    "usesThemes": false,
+    "usesThemes": true,
     "executable": "/dist/build.js",
     "engine": "latest",
     "tags": [
