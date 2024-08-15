@@ -1,5 +1,5 @@
 import { NamingHelper, CSSHelper, ColorFormat, StringCase, ColorHelper } from "@supernovaio/export-helpers"
-import { Token, TokenGroup, TokenTheme, TokenType } from "@supernovaio/sdk-exporters"
+import { Token, TokenGroup, TokenType } from "@supernovaio/sdk-exporters"
 import shortenCssHex = require("shorten-css-hex")
 
 
@@ -9,14 +9,13 @@ export function dive(tokens: Token[], mappedTokens: Map<string, Token>, tokenGro
         .map((t) => renderToken(t, mappedTokens, theme, tokenGroups))
         .sort()
 
-    //console.log(tokenOut)
     return tokenOut
 }
 
+// This function checks the token for its type then handles it accordingly.
 export function renderToken(t, mappedTokens: Map<string, Token>, theme: string, tokenGroups: TokenGroup[]){
     const tokenName = tokenVariableName(t, tokenGroups)
     const tokenCollection = t.properties.filter((p) => p.name === 'Collection')[0].options.filter((o) => o.id === t.propertyValues.Collection).map((c) => `${c.name}`)[0]
-    console.log(t.properties)
     if(t.tokenType === TokenType.gradient){
 
     }
